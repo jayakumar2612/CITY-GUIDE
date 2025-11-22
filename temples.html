@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Guide - Rameswaram City Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-temple-hindu"></i>
+                <span>Rameswaram City Guide</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="temples.html" class="active">Temples</a></li>
+                <li><a href="places.html">Tourist Places</a></li>
+                <li><a href="hotels.html">Hotels</a></li>
+                <li><a href="transport.html">Transport</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header" style="background-image: url('https://images.unsplash.com/photo-1580477667995-2b94f01c9516?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5);"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <h1>Temple Exploration Guide</h1>
+            <p>Discover the sacred temples of Rameswaram with expert guidance</p>
+        </div>
+    </section>
+
+    <!-- Temple List -->
+    <section class="content-section">
+        <div class="container">
+            <div class="filter-bar">
+                <input type="text" id="templeSearch" placeholder="Search temples..." onkeyup="filterTemples()">
+                <button onclick="filterTemples()"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="temples-grid" id="templesGrid">
+                <div class="temple-card" data-name="Ramanathaswamy Temple">
+                    <div class="temple-image" style="background-image: url('https://www.justahotels.com/wp-content/uploads/2024/02/Ramanathaswamy-Temple.jpg'); background-size: cover; background-position: center;">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="temple-content">
+                        <h3>Ramanathaswamy Temple</h3>
+                        <p class="temple-description">One of the 12 Jyotirlinga temples dedicated to Lord Shiva. Famous for its long corridors and 22 holy wells (Theerthams).</p>
+                        <div class="temple-info">
+                            <span><i class="fas fa-clock"></i> 5:00 AM - 1:00 PM, 3:00 PM - 9:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Old Town, Rameswaram</span>
+                        </div>
+                        <button class="btn-primary" onclick="contactGuide('Ramanathaswamy Temple')">Book Guide</button>
+                    </div>
+                </div>
+
+                <div class="temple-card" data-name="Kothandaramaswamy Temple">
+                    <div class="temple-image" style="background-image: url('https://images.unsplash.com/photo-1606295686765-41ad9fd5e17c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="temple-content">
+                        <h3>Kothandaramaswamy Temple</h3>
+                        <p class="temple-description">Sacred temple located at Dhanushkodi, where Lord Rama performed coronation of Vibhishana. Offers stunning beach views.</p>
+                        <div class="temple-info">
+                            <span><i class="fas fa-clock"></i> 6:00 AM - 7:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Dhanushkodi, Rameswaram</span>
+                        </div>
+                        <button class="btn-primary" onclick="contactGuide('Kothandaramaswamy Temple')">Book Guide</button>
+                    </div>
+                </div>
+
+                <div class="temple-card" data-name="Panchamukha Hanuman Temple">
+                    <div class="temple-image" style="background-image: url('https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="temple-content">
+                        <h3>Panchamukha Hanuman Temple</h3>
+                        <p class="temple-description">Unique temple featuring five-faced Hanuman statue. Located near the sea shore, known for floating stone beliefs.</p>
+                        <div class="temple-info">
+                            <span><i class="fas fa-clock"></i> 6:00 AM - 8:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Gandamadana Parvatham</span>
+                        </div>
+                        <button class="btn-primary" onclick="contactGuide('Panchamukha Hanuman Temple')">Book Guide</button>
+                    </div>
+                </div>
+
+                <div class="temple-card" data-name="Nambu Nayaki Amman Temple">
+                    <div class="temple-image" style="background-image: url('https://images.unsplash.com/photo-1580477667995-2b94f01c9516?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="temple-content">
+                        <h3>Nambu Nayaki Amman Temple</h3>
+                        <p class="temple-description">Ancient temple dedicated to Goddess Parvati, located near Ramanathaswamy Temple. Rich in history and architecture.</p>
+                        <div class="temple-info">
+                            <span><i class="fas fa-clock"></i> 6:00 AM - 12:00 PM, 4:00 PM - 8:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Near Ramanathaswamy Temple</span>
+                        </div>
+                        <button class="btn-primary" onclick="contactGuide('Nambu Nayaki Amman Temple')">Book Guide</button>
+                    </div>
+                </div>
+
+                <div class="temple-card" data-name="Villondi Tirtham">
+                    <div class="temple-image" style="background-image: url('https://images.unsplash.com/photo-1509316785289-025f5b846b35?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="temple-content">
+                        <h3>Villondi Tirtham</h3>
+                        <p class="temple-description">Sacred water body where Lord Rama quenched Sita's thirst. Fresh water spring in the middle of sea, considered holy.</p>
+                        <div class="temple-info">
+                            <span><i class="fas fa-clock"></i> Open 24/7</span>
+                            <span><i class="fas fa-map-marker-alt"></i> 7 km from Rameswaram</span>
+                        </div>
+                        <button class="btn-primary" onclick="contactGuide('Villondi Tirtham')">Book Guide</button>
+                    </div>
+                </div>
+
+                <div class="temple-card" data-name="Agnitheertham">
+                    <div class="temple-image" style="background-image: url('https://images.unsplash.com/photo-1509316785289-025f5b846b35?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="temple-content">
+                        <h3>Agnitheertham</h3>
+                        <p class="temple-description">First of the 64 Theerthams, located 100 meters from Ramanathaswamy Temple. Popular for ritual bathing before temple visit.</p>
+                        <div class="temple-info">
+                            <span><i class="fas fa-clock"></i> Open 24/7</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Near Ramanathaswamy Temple</span>
+                        </div>
+                        <button class="btn-primary" onclick="contactGuide('Agnitheertham')">Book Guide</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Guide Section -->
+    <section class="guide-contact">
+        <div class="container">
+            <h2>Book Your Temple Tour Guide</h2>
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Call Guide</h3>
+                    <p>+91 98765 43210</p>
+                    <a href="tel:+919876543210" class="btn-primary">Call Now</a>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Guide</h3>
+                    <p>guide@rameswaramcity.com</p>
+                    <a href="mailto:guide@rameswaramcity.com" class="btn-primary">Send Email</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Rameswaram City Guide</h3>
+                    <p>Your trusted partner for exploring Rameswaram's temples and tourist places.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="temples.html">Temples</a></li>
+                        <li><a href="places.html">Tourist Places</a></li>
+                        <li><a href="hotels.html">Hotels</a></li>
+                        <li><a href="transport.html">Transport</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Guide</h4>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> guide@rameswaramcity.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Rameswaram City Guide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

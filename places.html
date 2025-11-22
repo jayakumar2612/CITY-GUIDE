@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Places - Rameswaram City Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-temple-hindu"></i>
+                <span>Rameswaram City Guide</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="temples.html">Temples</a></li>
+                <li><a href="places.html" class="active">Tourist Places</a></li>
+                <li><a href="hotels.html">Hotels</a></li>
+                <li><a href="transport.html">Transport</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header" style="background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5);"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <h1>Explore Tourist Places</h1>
+            <p>Discover beautiful attractions and sightseeing spots in Rameswaram</p>
+        </div>
+    </section>
+
+    <!-- Tourist Places List -->
+    <section class="content-section">
+        <div class="container">
+            <div class="filter-bar">
+                <input type="text" id="placeSearch" placeholder="Search places..." onkeyup="filterPlaces()">
+                <button onclick="filterPlaces()"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="places-grid" id="placesGrid">
+                <div class="place-card" data-name="Dhanushkodi Beach">
+                    <div class="place-image" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="place-content">
+                        <h3>Dhanushkodi Beach</h3>
+                        <p class="place-description">Ghost town with pristine beaches and ruins. Where the Bay of Bengal meets the Indian Ocean. A must-visit for nature lovers.</p>
+                        <div class="place-info">
+                            <span><i class="fas fa-map-marker-alt"></i> 18 km from Rameswaram</span>
+                            <span><i class="fas fa-clock"></i> 5:00 AM - 6:00 PM</span>
+                        </div>
+                        <button class="btn-primary" onclick="contactGuide('Dhanushkodi Beach Tour')">Book Guide</button>
+                    </div>
+                </div>
+
+                <div class="place-card" data-name="Pamban Bridge">
+                    <div class="place-image" style="background-image: url('https://images.unsplash.com/photo-1581299894007-aaa50297cf16?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="place-content">
+                        <h3>Pamban Bridge</h3>
+                        <p class="place-description">Iconic railway bridge connecting Rameswaram to mainland India. India's first sea bridge, offering spectacular views.</p>
+                        <div class="place-info">
+                            <span><i class="fas fa-map-marker-alt"></i> Connects Rameswaram to Mandapam</span>
+                            <span><i class="fas fa-clock"></i> Best viewed during sunrise/sunset</span>
+                        </div>
+                        <button class="btn-primary" onclick="contactGuide('Pamban Bridge Tour')">Book Guide</button>
+                    </div>
+                </div>
+
+                <div class="place-card" data-name="Kurusadai Island">
+                    <div class="place-image" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="place-content">
+                        <h3>Kurusadai Island</h3>
+                        <p class="place-description">Marine biological paradise with coral reefs and diverse marine life. Perfect for snorkeling and bird watching.</p>
+                        <div class="place-info">
+                            <span><i class="fas fa-map-marker-alt"></i> 4 km from Mandapam</span>
+                            <span><i class="fas fa-clock"></i> Best time: Morning</span>
+                        </div>
+                        <button class="btn-primary" onclick="contactGuide('Kurusadai Island Tour')">Book Guide</button>
+                    </div>
+                </div>
+
+                <div class="place-card" data-name="Ariyaman Beach">
+                    <div class="place-image" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="place-content">
+                        <h3>Ariyaman Beach</h3>
+                        <p class="place-description">Beautiful beach with clear blue waters, perfect for swimming and water sports. Well-maintained with facilities.</p>
+                        <div class="place-info">
+                            <span><i class="fas fa-map-marker-alt"></i> 3 km from Rameswaram</span>
+                            <span><i class="fas fa-clock"></i> 6:00 AM - 6:00 PM</span>
+                        </div>
+                        <button class="btn-primary" onclick="contactGuide('Ariyaman Beach Tour')">Book Guide</button>
+                    </div>
+                </div>
+
+                <div class="place-card" data-name="Gandamadana Parvatham">
+                    <div class="place-image" style="background-image: url('https://images.unsplash.com/photo-1509316975850-ff9c5df0cafe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="place-content">
+                        <h3>Gandamadana Parvatham</h3>
+                        <p class="place-description">Highest point in Rameswaram offering panoramic views. Temple with footprints of Lord Rama, believed to be where he saw Lanka.</p>
+                        <div class="place-info">
+                            <span><i class="fas fa-map-marker-alt"></i> 3 km from Rameswaram</span>
+                            <span><i class="fas fa-clock"></i> 6:00 AM - 8:00 PM</span>
+                        </div>
+                        <button class="btn-primary" onclick="contactGuide('Gandamadana Parvatham Tour')">Book Guide</button>
+                    </div>
+                </div>
+
+                <div class="place-card" data-name="Adam's Bridge Viewpoint">
+                    <div class="place-image" style="background-image: url('https://images.unsplash.com/photo-1509316785289-025f5b846b35?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="place-content">
+                        <h3>Adam's Bridge Viewpoint</h3>
+                        <p class="place-description">Viewpoint to see the remains of Ram Setu (Adam's Bridge). Historical significance with beautiful natural scenery.</p>
+                        <div class="place-info">
+                            <span><i class="fas fa-map-marker-alt"></i> Dhanushkodi area</span>
+                            <span><i class="fas fa-clock"></i> Best time: Morning</span>
+                        </div>
+                        <button class="btn-primary" onclick="contactGuide('Adam\'s Bridge Viewpoint Tour')">Book Guide</button>
+                    </div>
+                </div>
+
+                <div class="place-card" data-name="Kalam Memorial House">
+                    <div class="place-image" style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="place-content">
+                        <h3>Kalam Memorial House</h3>
+                        <p class="place-description">Memorial museum dedicated to Dr. APJ Abdul Kalam, former President of India. His childhood home converted into museum.</p>
+                        <div class="place-info">
+                            <span><i class="fas fa-map-marker-alt"></i> 2 km from Rameswaram</span>
+                            <span><i class="fas fa-clock"></i> 9:00 AM - 6:00 PM</span>
+                        </div>
+                        <button class="btn-primary" onclick="contactGuide('Kalam Memorial House Tour')">Book Guide</button>
+                    </div>
+                </div>
+
+                <div class="place-card" data-name="Five Faced Hanuman Temple Beach">
+                    <div class="place-image" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="place-content">
+                        <h3>Five Faced Hanuman Temple Beach</h3>
+                        <p class="place-description">Peaceful beach near Panchamukha Hanuman Temple. Perfect for meditation and witnessing beautiful sunrises.</p>
+                        <div class="place-info">
+                            <span><i class="fas fa-map-marker-alt"></i> Near Gandamadana Parvatham</span>
+                            <span><i class="fas fa-clock"></i> Open 24/7</span>
+                        </div>
+                        <button class="btn-primary" onclick="contactGuide('Five Faced Hanuman Temple Beach Tour')">Book Guide</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Guide Section -->
+    <section class="guide-contact">
+        <div class="container">
+            <h2>Book Your City Tour Guide</h2>
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Call Guide</h3>
+                    <p>+91 98765 43210</p>
+                    <a href="tel:+919876543210" class="btn-primary">Call Now</a>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Guide</h3>
+                    <p>guide@rameswaramcity.com</p>
+                    <a href="mailto:guide@rameswaramcity.com" class="btn-primary">Send Email</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Rameswaram City Guide</h3>
+                    <p>Your trusted partner for exploring Rameswaram's temples and tourist places.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="temples.html">Temples</a></li>
+                        <li><a href="places.html">Tourist Places</a></li>
+                        <li><a href="hotels.html">Hotels</a></li>
+                        <li><a href="transport.html">Transport</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Guide</h4>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> guide@rameswaramcity.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Rameswaram City Guide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

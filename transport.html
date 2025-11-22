@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Booking - Rameswaram City Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-temple-hindu"></i>
+                <span>Rameswaram City Guide</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="temples.html">Temples</a></li>
+                <li><a href="places.html">Tourist Places</a></li>
+                <li><a href="hotels.html">Hotels</a></li>
+                <li><a href="transport.html" class="active">Transport</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header" style="background-image: url('https://content.jdmagicbox.com/comp/cuddalore/j6/9999p4142.4142.121208124621.t9j6/catalogue/cars-track-call-taxi-manjakkuppam-cuddalore-taxi-services-9vp09819d2.jpg'); background-size: cover; background-position: center; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5);"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <h1>Car Booking</h1>
+            <p>Book cars for your Rameswaram city tour through our guide service</p>
+        </div>
+    </section>
+
+    <!-- Transport Booking -->
+    <section class="content-section">
+        <div class="container">
+            <div class="transport-container">
+                <div class="booking-form">
+                    <h2>Transport Booking Request</h2>
+                    <form id="transportBookingForm" onsubmit="submitTransportBooking(event)">
+                        <div class="form-group">
+                            <label><i class="fas fa-car"></i> Car Type</label>
+                            <select id="carType" required>
+                                <option value="">Select car type</option>
+                                <option value="hatchback">Hatchback</option>
+                                <option value="sedan">Sedan</option>
+                                <option value="suv">SUV</option>
+                                <option value="innova">Innova</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label><i class="fas fa-user"></i> Full Name</label>
+                            <input type="text" id="transportName" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-phone"></i> Contact Number</label>
+                            <input type="tel" id="transportPhone" required placeholder="Enter your phone number">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-envelope"></i> Email</label>
+                            <input type="email" id="transportEmail" placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-calendar"></i> Booking Date</label>
+                            <input type="date" id="bookingDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-clock"></i> Rental Duration</label>
+                            <select id="duration" required>
+                                <option value="">Select duration</option>
+                                <option value="half-day">Half Day (4 hours)</option>
+                                <option value="full-day">Full Day (8 hours)</option>
+                                <option value="2-days">2 Days</option>
+                                <option value="3-days">3 Days</option>
+                                <option value="weekly">Weekly</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-id-card"></i> License Number</label>
+                            <input type="text" id="licenseNumber" required placeholder="Enter driving license number">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-map-marker-alt"></i> Pickup Location</label>
+                            <input type="text" id="pickupLocation" required placeholder="Enter pickup location">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-comment"></i> Special Requirements</label>
+                            <textarea id="transportRequirements" rows="3" placeholder="Any special requirements"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary btn-full">Submit Booking Request</button>
+                    </form>
+                </div>
+                
+                <div class="vehicle-info">
+                    <h2>Available Vehicles</h2>
+                    
+                    <div class="vehicle-category">
+                        <h3><i class="fas fa-car"></i> Available Cars</h3>
+                        <div class="vehicle-list">
+                            <div class="vehicle-item">
+                                <h4>Hatchback</h4>
+                                <p><i class="fas fa-users"></i> 4-5 Seaters</p>
+                                <p class="vehicle-desc">Compact car perfect for small groups</p>
+                            </div>
+                            <div class="vehicle-item">
+                                <h4>Sedan</h4>
+                                <p><i class="fas fa-users"></i> 4-5 Seaters</p>
+                                <p class="vehicle-desc">Comfortable sedan with AC</p>
+                            </div>
+                            <div class="vehicle-item">
+                                <h4>SUV</h4>
+                                <p><i class="fas fa-users"></i> 6-7 Seaters</p>
+                                <p class="vehicle-desc">Spacious SUV for families</p>
+                            </div>
+                            <div class="vehicle-item">
+                                <h4>Innova</h4>
+                                <p><i class="fas fa-users"></i> 7-8 Seaters</p>
+                                <p class="vehicle-desc">Premium van for large groups</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="booking-note">
+                        <h4><i class="fas fa-info-circle"></i> Booking Information</h4>
+                        <ul>
+                            <li>All cars are well-maintained and insured</li>
+                            <li>Driver available on request</li>
+                            <li>Contact guide for pricing and availability</li>
+                            <li>Security deposit required at the time of booking</li>
+                            <li>Valid driving license mandatory</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Guide Section -->
+    <section class="guide-contact">
+        <div class="container">
+            <h2>Book Car via Guide Service</h2>
+            <p class="contact-description">Our guide service ensures you get reliable cars at best prices for exploring Rameswaram.</p>
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Call Guide</h3>
+                    <p>+91 98765 43210</p>
+                    <a href="tel:+919876543210" class="btn-primary">Call Now</a>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Guide</h3>
+                    <p>guide@rameswaramcity.com</p>
+                    <a href="mailto:guide@rameswaramcity.com" class="btn-primary">Send Email</a>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>WhatsApp</h3>
+                    <p>Quick Booking</p>
+                    <a href="https://wa.me/919876543210?text=Hi, I need transport booking assistance" class="btn-primary" target="_blank">Chat Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Rameswaram City Guide</h3>
+                    <p>Your trusted partner for exploring Rameswaram's temples and tourist places.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="temples.html">Temples</a></li>
+                        <li><a href="places.html">Tourist Places</a></li>
+                        <li><a href="hotels.html">Hotels</a></li>
+                        <li><a href="transport.html">Transport</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Guide</h4>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> guide@rameswaramcity.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Rameswaram City Guide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
